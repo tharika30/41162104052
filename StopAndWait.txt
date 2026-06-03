@@ -1,0 +1,29 @@
+import java.util.Scanner;
+
+public class StopAndWait {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int frame = 0;
+        char choice;
+
+        do {
+            System.out.println("\nSender: Sending Frame " + frame);
+            
+            // Simulating receiver receiving the frame
+            System.out.println("Receiver: Frame " + frame + " received");
+            System.out.println("Receiver: Sending ACK " + frame);
+            
+            // Simulating sender receiving ACK
+            System.out.println("Sender: ACK " + frame + " received");
+            
+            frame++;
+
+            System.out.print("Send next frame? (y/n): ");
+            choice = sc.next().charAt(0);
+
+        } while (choice == 'y' || choice == 'Y');
+
+        sc.close();
+    }
+}
+
